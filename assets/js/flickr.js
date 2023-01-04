@@ -28,9 +28,16 @@ function getFlickrImage(cityName) {
       var imageURL = `https://live.staticflickr.com/${imageDetails.server}/${imageDetails.id}_${imageDetails.secret}.jpg`;
       imagesLinks.push(imageURL);
     });
-    console.log(imagesLinks);
-
+    // console.log(imagesLinks);
+    displayImages(imagesLinks);
     // $("#image").attr("src", queryURL);
+  });
+}
+
+function displayImages(imagesLinksArray) {
+  imagesLinksArray.map(function (link) {
+    imgEl = $("<img>").attr("src", link);
+    $(".images").append(imgEl);
   });
 }
 
