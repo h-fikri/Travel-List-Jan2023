@@ -17,14 +17,20 @@ function getFlickrImage(cityName) {
     console.log(response.photos.photo[0].secret);
     console.log(response.photos.photo[0].server);
 
-    var firstPhoto = photoArray[0];
-    var imageDetails = {
-      id: firstPhoto.id,
-      secret: firstPhoto.secret,
-      server: firstPhoto.server,
-    };
-    var queryURL = `https://live.staticflickr.com/${imageDetails.server}/${imageDetails.id}_${imageDetails.secret}.jpg`;
-    $("#image").attr("src", queryURL);
+    var imagesLinks = [];
+
+    photoArray.map(function (photo) {
+      var imageDetails = {
+        id: photo.id,
+        secret: photo.secret,
+        server: photo.server,
+      };
+      var imageURL = `https://live.staticflickr.com/${imageDetails.server}/${imageDetails.id}_${imageDetails.secret}.jpg`;
+      imagesLinks.push(imageURL);
+    });
+    console.log(imagesLinks);
+
+    // $("#image").attr("src", queryURL);
   });
 }
 
