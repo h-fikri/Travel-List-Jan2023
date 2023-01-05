@@ -12,12 +12,20 @@
     <header>This is Header</header>
     <main class="container-fluid">
       <div class="row" id="search">
-        <div class="col-12 jumbotron">
+        <div class="col-12jumbotron">
           <h1 class="display-4">Travel List</h1>
           <p class="lead">Where would you like to go?</p>
           <hr class="my-4">
-          <button type="button" class="btn btn-primary rounded" id="search-btn">Search</button>
-          <button type="button" class="btn btn-secondary rounded" id="random-btn">Random</button>
+          <form>
+            <div class="form-group">
+              <label for="search-box">Search for a City: </label>
+              <br />
+              <input type="text" id="search-box">
+              <br />
+              <button type="button" class="btn btn-primary rounded my-2" id="search-btn">Search</button>
+              <button type="button" class="btn btn-secondary rounded my-2" id="random-btn">Random</button>
+            </div>
+          </form>
         </div>
       </div>
       <div class="row col-12" id="photos">
