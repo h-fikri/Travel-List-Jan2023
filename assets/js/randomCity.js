@@ -1,3 +1,4 @@
+// popular cities array - created with OpenGPT
 var popularCities = [
   "Tokyo",
   "Delhi",
@@ -72,9 +73,10 @@ var popularCities = [
   "Toronto",
 ];
 
-function getRandomCity(array) {
-  var randomCity = array[Math.floor(Math.random() * array.length)];
-  console.log(randomCity);
+function getRandomCity() {
+  var randomCity =
+    popularCities[Math.floor(Math.random() * popularCities.length)];
+  return randomCity;
 }
 // testing
-// getRandomCity(popularCities);
+// getRandomCity();
