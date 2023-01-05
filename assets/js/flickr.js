@@ -1,9 +1,11 @@
-// Notes
-// getFlickrImages function is called with a city name and creates 4 img elements inside an images class div
+// Notes - Description
+// - getFlickrImages function is called with a city name and creates 4 img elements inside an .images class element.
+// - The targeted element ID can be changed by changing targetId variable
 // -------------------------------
 
 var API_KEY = "af8b14f5d63c1d15f94a974b1e37ffb7";
 var SECRET = "d88fb2bc3f7b2a07"; // not in use
+var targetId = "images";
 
 // function called with a cityName parameter
 function getFlickrImages(cityName) {
@@ -39,7 +41,7 @@ function getFlickrImages(cityName) {
 function displayImages(imagesLinksArray) {
   imagesLinksArray.map(function (link) {
     imgEl = $("<img>").attr("src", link);
-    $(".images").append(imgEl);
+    $(`#${targetId}`).append(imgEl);
   });
 }
 
