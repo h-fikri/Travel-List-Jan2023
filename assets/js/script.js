@@ -13,6 +13,7 @@ $("#search-btn").on("click", function (event) {
   event.preventDefault();
   var cityInput = $("#search-box").val().trim();
   getUnsplashImages(cityInput);
+  $("#search-box").val(""); // empty input display
 });
 
 // ---------------------------
