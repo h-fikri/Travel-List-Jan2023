@@ -35,6 +35,7 @@ function getUnsplashImages(cityName) {
 
 // function that displays images by creating img element in #targetId div (with src and alt attrubutes filled in)
 function displayImages(imagesInfoArray) {
+  $(`#${targetId}`).empty(); // empty previous content
   imagesInfoArray.map(function (image) {
     imgEl = $("<img>").attr("src", image.url);
     imgEl.attr("alt", image.alt);
