@@ -1,5 +1,6 @@
-// event listener for random city button
+// Jumbotron buttons functionality
 
+// random city event listener - returning 4 images
 $("#random-btn").on("click", function () {
   console.log("random clicked");
   var randomCity = getRandomCity();
@@ -7,11 +8,11 @@ $("#random-btn").on("click", function () {
   getUnsplashImages(randomCity);
 });
 
-// form event listener
+// user input form event listener - returning 4 images based on input
 $("#search-btn").on("click", function (event) {
   event.preventDefault();
   var cityInput = $("#search-box").val().trim();
-  // console.log(cityInput);
   getUnsplashImages(cityInput);
 });
-// getting user input when form is submitted
+
+// ---------------------------
