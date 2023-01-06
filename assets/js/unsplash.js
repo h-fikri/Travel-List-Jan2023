@@ -1,6 +1,6 @@
 // Notes - Description
-// - getUnsplashImages function is called with a city name and creates 4 img elements inside an .images class element.
-// - The targeted element ID can be changed by changing targetId variable
+// - getUnsplashImages function is called with a city name and creates 4 img elements inside 4 elements with specific targetIds.
+// - The targeted element IDs can be changed by changing targetIds variable
 // -------------------------------
 
 var API_KEY = "6KNhdCaJ8Ct-wL5wW3cjzWPIC-Os2V-DTAJxL1-u2HA";
@@ -33,7 +33,7 @@ function getUnsplashImages(cityName) {
   });
 }
 
-// function that displays images by creating an img element in each #targetId div (with src and alt attrubutes filled in)
+// function that displays images by creating an img element in each #targetId div (with src and alt attributes filled in)
 function displayImages(imagesInfoArray) {
   imagesInfoArray.map(function (image, i) {
     $(`#${targetIds[i]}`).empty(); // empty previous content of each
