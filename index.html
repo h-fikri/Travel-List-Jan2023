@@ -20,7 +20,19 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <header>This is Header</header>
+    <header>
+      <!-- navbar -->
+      <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <img src="/design/Logo (2).png" width="50" height="50" alt="Travel Bucket List Logo" />
+        </a>
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link" href="#"> <button type="button" class="btn btn-primary">Contact us</button></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
     <main class="container-fluid">
       <div class="row" id="search">
         <div class="col-12 jumbotron">
@@ -57,10 +69,71 @@
         <div class="col-12"></div>
       </div>
       <div class="row col-12" id="results">
-        <div class="col-12"></div>
+        <div class="col-12">
+          <!-- images 1 & 2 -->
+          <div class="row">
+            <div class="col-12 col-lg-5" id="images">
+              <div class="row">
+                <div class="col-12 col-lg-6" id="img-1-div">
+                  <img src="https://via.placeholder.com/200x100.png?text=Image1">
+                </div>
+                <div class="col-12 col-lg-6" id="img-2-div">
+                  <img src="https://via.placeholder.com/200x100.png?text=Image2">
+                </div>
+              </div>
+              <!-- images 3 & 4 -->
+              <div class="row">
+                <div class="col-12 col-lg-6" id="img-3-div">
+                  <img src="https://via.placeholder.com/200x100.png?text=Image3">
+                </div>
+                <div class="col-12 col-lg-6" id="img-4-div">
+                  <img src="https://via.placeholder.com/200x100.png?text=Image4">
+                </div>
+              </div>
+            </div>
+            <!-- map -->
+            <div class="col-12 col-lg-4" id="map">
+              <img src="https://via.placeholder.com/400x400.png?text=map">
+            </div>
+            <!-- favourites -->
+            <div class="col-12 col-lg-3" id="favourites">
+              <img src="https://via.placeholder.com/200x400.png?text=favourites">
+            </div>
+        </div>
       </div>
     </main>
-    <footer>Made with Love Copyright NamelessGhouls @2023</footer>
+    <footer>
+      <footer class="w-100 py-4 flex-shrink-0">
+        <div class="container py-4">
+          <div class="row gy-4 gx-5">
+            <div class="col-lg-4 col-md-6">
+              <h5 class="h1 text-white">FB.</h5>
+              <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+              <p class="small text-muted mb-0">&copy; Copyrights. 2023. Nameless Ghouls.</p>
+            </div>
+            <div class="col-lg-2 col-md-6">
+              <h5 class="text-white mb-3">Quick links</h5>
+              <ul class="list-unstyled text-muted">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Get started</a></li>
+                <li><a href="#">FAQ</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <h5 class="text-white mb-3">Newsletter</h5>
+              <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+              <form action="#">
+                <div class="input-group mb-3">
+                  <input class="form-control" type="text" placeholder="email" aria-label="Recipient's username" aria-describedby="button-addon2" />
+                  <button class="btn btn-primary" id="button-addon2" type="button"><i class="fas fa-paper-plane"></i></button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </footer>
 
     <!-- BOOTSTRAP JAVASCRIPT FILES -->
     <script
