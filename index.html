@@ -1,100 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <title>Travel Bucket List</title>
 
-    <!-- BOOTSTRAP CSS FILE -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-    <!-- CUSTOM CSS FILE -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
-  <body>
-    <header>
-      <!-- navbar -->
-      <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-          <img src="/design/Logo (2).png" width="50" height="50" alt="Travel Bucket List Logo" />
-        </a>
-        <ul class="nav justify-content-end">
-          <li class="nav-item">
-            <a class="nav-link" href="#"> <button type="button" class="btn btn-primary">Contact us</button></a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main class="container-fluid">
-      <div class="row" id="search">
-        <div class="col-12 jumbotron">
-          <div class="col-lg-6 mx-auto ">
-            <h1 class="display-4">Travel List</h1>
-            <p class="lead">Where would you like to go?</p>
-            <hr class="my-4">
-            <form>
-              <div class="form-group">
-                <label for="search-box">Search for a City: </label>
-                <br />
-                <input type="text" id="search-box">
-                <br />
-                <button type="button" class="btn btn-primary rounded my-2" id="search-btn">Search</button>
-                <button type="button" class="btn btn-secondary rounded my-2" id="random-btn">Random</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <title>Travel Bucket List</title>
+
+  <!-- BOOTSTRAP CSS FILE -->
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous" />
+  <!-- CUSTOM CSS FILE -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <header>
+    <!-- navbar -->
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="/design/Logo (2).png" width="50" height="50" alt="Travel Bucket List Logo" />
+      </a>
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link" href="#"> <button type="button" class="btn btn-primary">Contact
+              us</button></a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="container-fluid">
+    <div class="row" id="search">
+      <div class="col-12 jumbotron">
+        <div class="col-lg-6 mx-auto ">
+          <h1 class="display-4">Travel List</h1>
+          <p class="lead">Where would you like to go?</p>
+          <hr class="my-4">
+          <form>
+            <div class="form-group">
+              <label for="search-box">Search for a City: </label>
+              <br />
+              <input type="text" id="search-box">
+              <br />
+              <button type="button" class="btn btn-primary rounded my-2"
+                id="search-btn">Search</button>
+              <button type="button" class="btn btn-secondary rounded my-2"
+                id="random-btn">Random</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row" id="photos">
+      <div class="col-12">
+
+      </div>
+    </div>
+    <div class="row col-12" id="results">
+      <div class="col-12">
+        <!-- !THIS DIV IS ONLY FOR TESTING OF MAPS -->
+        <div id="google-map" class="col-12"></div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <footer class="w-100 py-4 flex-shrink-0">
+      <div class="container py-4">
+        <div class="row gy-4 gx-5">
+          <div class="col-lg-4 col-md-6">
+            <h5 class="h1 text-white">FB.</h5>
+            <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt.</p>
+            <p class="small text-muted mb-0">&copy; Copyrights. 2023. Nameless Ghouls.</p>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <h5 class="text-white mb-3">Quick links</h5>
+            <ul class="list-unstyled text-muted">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Get started</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <h5 class="text-white mb-3">Newsletter</h5>
+            <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt.</p>
+            <form action="#">
+              <div class="input-group mb-3">
+                <input class="form-control" type="text" placeholder="email"
+                  aria-label="Recipient's username" aria-describedby="button-addon2" />
+                <button class="btn btn-primary" id="button-addon2" type="button"><i
+                    class="fas fa-paper-plane"></i></button>
               </div>
             </form>
           </div>
         </div>
       </div>
-      <div class="row" id="photos">
-        <div class="col-12">
-
-        </div>
-      </div>
-      <div class="row col-12" id="results">
-        <div class="col-12">
-     
-        </div>
-      </div>
-    </main>
-    <footer>
-      <footer class="w-100 py-4 flex-shrink-0">
-        <div class="container py-4">
-          <div class="row gy-4 gx-5">
-            <div class="col-lg-4 col-md-6">
-              <h5 class="h1 text-white">FB.</h5>
-              <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-              <p class="small text-muted mb-0">&copy; Copyrights. 2023. Nameless Ghouls.</p>
-            </div>
-            <div class="col-lg-2 col-md-6">
-              <h5 class="text-white mb-3">Quick links</h5>
-              <ul class="list-unstyled text-muted">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Get started</a></li>
-                <li><a href="#">FAQ</a></li>
-              </ul>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <h5 class="text-white mb-3">Newsletter</h5>
-              <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-              <form action="#">
-                <div class="input-group mb-3">
-                  <input class="form-control" type="text" placeholder="email" aria-label="Recipient's username" aria-describedby="button-addon2" />
-                  <button class="btn btn-primary" id="button-addon2" type="button"><i class="fas fa-paper-plane"></i></button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </footer>
     </footer>
+  </footer>
 
-    <!-- BOOTSTRAP JAVASCRIPT FILES -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <!-- CUSTOM JAVASCRIPT FILES -->
-    <script src="./assets/js/unsplash.js"></script>
-    <script src="scripts.js"></script>
-  </body>
+  <!-- BOOTSTRAP JAVASCRIPT FILES -->
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <!-- INLINE  CALL MAPS API-->
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxxgDfu2qDm0BdsQyrxeBQnPOtJWJO1RU&callback=initMap"
+    async defer></script>
+  <!-- CUSTOM JAVASCRIPT FILES -->
+  <script src="./assets/js/maps.js"></script>
+  <script src="./assets/js/unsplash.js"></script>
+</body>
+
 </html>
