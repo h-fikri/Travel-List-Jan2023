@@ -18,10 +18,11 @@
     />
     <!-- CUSTOM CSS FILE -->
     <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://kit.fontawesome.com/4835f54642.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <header>
-      <!-- navbar -->
+      <!-- NAVBAR -->
       <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">
           <img src="/design/Logo (2).png" width="50" height="50" alt="Travel Bucket List Logo" />
@@ -33,6 +34,9 @@
         </ul>
       </nav>
     </header>
+    
+    <!-- MAIN START -->
+    <!-- FIRST SLIDE START -->
     <main class="container-fluid">
       <div class="row" id="search">
         <div class="col-12 jumbotron">
@@ -44,7 +48,9 @@
               <div class="form-group">
                 <label for="search-box">Search for a City: </label>
                 <br />
-                <input type="text" id="search-box" />
+
+                <input type="text" id="search-box" placeholder="Type your destination" />
+
                 <br />
                 <button
                   type="button"
@@ -68,6 +74,8 @@
       <div class="row" id="photos">
         <div class="col-12"></div>
       </div>
+      <!-- FIRST SLIDE END -->
+      <!-- SECOND SLIDE START (result section: random images and google map) -->
       <div class="row col-12" id="results">
         <div class="col-12">
           <!-- images 1 & 2 -->
@@ -102,6 +110,9 @@
         </div>
       </div>
     </main>
+    <!-- SECOND SLIDE END (result section: random images and google map) -->
+    <!-- MAIN END -->
+    <!-- FOOTER START -->
     <footer>
       <footer class="w-100 py-4 flex-shrink-0">
         <div class="container py-4">
@@ -134,6 +145,7 @@
         </div>
       </footer>
     </footer>
+     <!-- FOOTER END -->
 
     <!-- BOOTSTRAP JAVASCRIPT FILES -->
     <script
