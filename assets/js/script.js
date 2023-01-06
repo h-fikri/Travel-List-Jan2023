@@ -11,6 +11,7 @@ $("#random-btn").on("click", function () {
 $("#search-btn").on("click", function (event) {
   event.preventDefault();
   var cityInput = $("#search-box").val().trim();
-  console.log(cityInput);
+  // console.log(cityInput);
+  getUnsplashImages(cityInput);
 });
 // getting user input when form is submitted
