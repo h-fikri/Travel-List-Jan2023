@@ -40,32 +40,31 @@
     <main class="container-fluid">
       <div class="row" id="search">
         <div class="col-12 jumbotron">
-          <div class="col-lg-6 mx-auto">
-            <h1 class="display-4">Travel List</h1>
-            <p class="lead">Where would you like to go?</p>
+          <div class="col-12 col-sm-8 col-lg-6 mx-auto">
+            <h1 class="display-4 text-center">Travel List</h1>
+            <p class="lead text-center">Where would you like to go?</p>
             <hr class="my-4" />
             <form>
               <div class="form-group">
-                <label for="search-box">Search for a City: </label>
-                <br />
-
-                <input type="text" id="search-box" placeholder="Type your destination" />
-
-                <br />
-                <button
-                  type="submit"
-                  class="btn btn-primary rounded my-2"
-                  id="search-btn"
-                >
-                  Search
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-secondary rounded my-2"
-                  id="random-btn"
-                >
-                  Random
-                </button>
+                <div class="row">
+                  <input type="text" id="search-box" placeholder="Search for a City" class="col-12 my-2 rounded-pill form-control-lg" />
+                </div>
+                <div class="row">
+                  <button
+                    type="submit"
+                    class="btn btn-primary rounded-pill col-12 col-sm-6 mx-0 my-2 form-control-lg"
+                    id="search-btn"
+                  >
+                    Search
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary rounded-pill col-12 col-sm-6 mx-0 my-2 form-control-lg"
+                    id="random-btn"
+                  >
+                    Random
+                  </button>
+                </div>
               </div>
             </form>
           </div>
