@@ -15,7 +15,7 @@
       crossorigin="anonymous"
     />
     <!-- CUSTOM CSS FILE -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <script src="https://kit.fontawesome.com/4835f54642.js" crossorigin="anonymous"></script>
   </head>
   <body>
@@ -23,7 +23,7 @@
       <!-- NAVBAR -->
       <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">
-          <img src="/design/Logo (2).png" width="50" height="50" alt="Travel Bucket List Logo" />
+          <img src="./design/Logo (2).png" width="50" height="50" alt="Travel Bucket List Logo" />
         </a>
         <ul class="nav justify-content-end">
           <li class="nav-item">
@@ -77,11 +77,19 @@
       <!-- FIRST SLIDE END -->
       <!-- SECOND SLIDE START (result section: random images and google map) -->
       <div class="row my-2" id="results">
-        <div class="col-12" id="google-map">
+        <div class="col-12">
+          <!-- DISPLAY NAME OF CITY -->
+          <div class="row">
+            <div class="col-12 text-center">
+              <h2 id="current-city">
+                New York
+              </h2>
+            </div>
+          </div>
           <!-- images 1 & 2 -->
           <div class="row">
             <div class="col-12 col-lg-5" id="images">
-              <div class="row">
+              <div class="row col-12 mx-0 px-0">
                 <div class="col-12 col-md-6 p-1" id="img-1-div">
                   <img class="img-fluid rounded" src="https://via.placeholder.com/800x400.png?text=Image1">
                 </div>
@@ -90,12 +98,24 @@
                 </div>
               </div>
               <!-- images 3 & 4 -->
-              <div class="row">
+              <div class="row col-12 mx-0 px-0">
                 <div class="col-12 col-md-6 p-1" id="img-3-div">
                   <img class="img-fluid rounded" src="https://via.placeholder.com/800x400.png?text=Image3">
                 </div>
                 <div class="col-12 col-md-6 p-1" id="img-4-div">
                   <img class="img-fluid rounded" src="https://via.placeholder.com/800x400.png?text=Image4">
+                </div>
+              </div>
+              <!-- save favourites button -->
+              <div class="row">
+                <div class="col-12 col-md-6 col-lg-12 mx-auto" id="save">
+                  <button
+                      type="button"
+                      class="btn btn-primary rounded-pill col-12 my-2 form-control-lg"
+                      id="save-btn"
+                    >
+                    Save to Favourites
+                  </button>
                 </div>
               </div>
             </div>
