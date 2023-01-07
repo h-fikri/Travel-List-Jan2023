@@ -1,10 +1,10 @@
 // Notes - Description
-// - getUnsplashImages function is called with a city name and creates 4 img elements inside an .images class element.
-// - The targeted element ID can be changed by changing targetId variable
+// - getUnsplashImages function is called with a city name and creates 4 img elements inside 4 elements with specific targetIds.
+// - The targeted element IDs can be changed by changing targetIds variable
 // -------------------------------
 
 var API_KEY = "6KNhdCaJ8Ct-wL5wW3cjzWPIC-Os2V-DTAJxL1-u2HA";
-var targetId = "photos"; // change the ID of the html element where the images will be appended to (don't include the # in the name)
+var targetIds = ["img-1-div", "img-2-div", "img-3-div", "img-4-div"]; // change the IDs of the html element where the images will be appended to (don't include the # in the name)
 
 // function called with a cityName parameter
 function getUnsplashImages(cityName) {
@@ -33,12 +33,13 @@ function getUnsplashImages(cityName) {
   });
 }
 
-// function that displays images by creating img element in #targetId div (with src and alt attrubutes filled in)
+// function that displays images by creating an img element in each #targetId div (with src and alt attributes filled in)
 function displayImages(imagesInfoArray) {
-  imagesInfoArray.map(function (image) {
+  imagesInfoArray.map(function (image, i) {
+    $(`#${targetIds[i]}`).empty(); // empty previous content of each
     imgEl = $("<img>").attr("src", image.url);
     imgEl.attr("alt", image.alt);
-    $(`#${targetId}`).append(imgEl);
+    $(`#${targetIds[i]}`).append(imgEl);
   });
 }
 // testing example
