@@ -38,34 +38,33 @@
     <!-- MAIN START -->
     <!-- FIRST SLIDE START -->
     <main class="container-fluid">
-      <div class="row" id="search">
+      <div class="row my-2" id="search">
         <div class="col-12 jumbotron">
-          <div class="col-lg-6 mx-auto">
-            <h1 class="display-4">Travel List</h1>
-            <p class="lead">Where would you like to go?</p>
+          <div class="col-12 col-sm-8 col-lg-6 mx-auto">
+            <h1 class="display-4 text-center">Travel List</h1>
+            <p class="lead text-center">Where would you like to go?</p>
             <hr class="my-4" />
             <form>
               <div class="form-group">
-                <label for="search-box">Search for a City: </label>
-                <br />
-
-                <input type="text" id="search-box" placeholder="Type your destination" />
-
-                <br />
-                <button
-                  type="submit"
-                  class="btn btn-primary rounded my-2"
-                  id="search-btn"
-                >
-                  Search
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-secondary rounded my-2"
-                  id="random-btn"
-                >
-                  Random
-                </button>
+                <div class="row">
+                  <input type="text" id="search-box" placeholder="Search for a City" class="col-12 my-2 rounded-pill form-control-lg" />
+                </div>
+                <div class="row">
+                  <button
+                    type="submit"
+                    class="btn btn-primary rounded-pill col-12 col-sm-6 mx-0 my-2 form-control-lg"
+                    id="search-btn"
+                  >
+                    Search
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary rounded-pill col-12 col-sm-6 mx-0 my-2 form-control-lg"
+                    id="random-btn"
+                  >
+                    Random
+                  </button>
+                </div>
               </div>
             </form>
           </div>
@@ -76,37 +75,38 @@
       </div>
       <!-- FIRST SLIDE END -->
       <!-- SECOND SLIDE START (result section: random images and google map) -->
-      <div class="row col-12" id="results">
+      <div class="row my-2" id="results">
         <div class="col-12">
           <!-- images 1 & 2 -->
           <div class="row">
             <div class="col-12 col-lg-5" id="images">
               <div class="row">
-                <div class="col-12 col-lg-6" id="img-1-div">
-                  <img src="https://via.placeholder.com/200x100.png?text=Image1">
+                <div class="col-12 col-md-6 p-1" id="img-1-div">
+                  <img class="img-fluid rounded" src="https://via.placeholder.com/800x400.png?text=Image1">
                 </div>
-                <div class="col-12 col-lg-6" id="img-2-div">
-                  <img src="https://via.placeholder.com/200x100.png?text=Image2">
+                <div class="col-12 col-md-6 p-1" id="img-2-div">
+                  <img class="img-fluid rounded" src="https://via.placeholder.com/800x400.png?text=Image2">
                 </div>
               </div>
               <!-- images 3 & 4 -->
               <div class="row">
-                <div class="col-12 col-lg-6" id="img-3-div">
-                  <img src="https://via.placeholder.com/200x100.png?text=Image3">
+                <div class="col-12 col-md-6 p-1" id="img-3-div">
+                  <img class="img-fluid rounded" src="https://via.placeholder.com/800x400.png?text=Image3">
                 </div>
-                <div class="col-12 col-lg-6" id="img-4-div">
-                  <img src="https://via.placeholder.com/200x100.png?text=Image4">
+                <div class="col-12 col-md-6 p-1" id="img-4-div">
+                  <img class="img-fluid rounded" src="https://via.placeholder.com/800x400.png?text=Image4">
                 </div>
               </div>
             </div>
             <!-- map -->
-            <div class="col-12 col-lg-4" id="map">
-              <img src="https://via.placeholder.com/400x400.png?text=map">
+            <div class="col-12 col-lg-5 my-1" id="map">
+              <img class="img-fluid" src="https://via.placeholder.com/800x800.png?text=map">
             </div>
             <!-- favourites -->
-            <div class="col-12 col-lg-3" id="favourites">
-              <img src="https://via.placeholder.com/200x400.png?text=favourites">
+            <div class="col-12 col-lg-2 my-1" id="favourites">
+              <img class="img-fluid" src="https://via.placeholder.com/400x600.png?text=favourites">
             </div>
+          </div>
         </div>
       </div>
     </main>
