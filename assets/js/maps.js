@@ -1,66 +1,76 @@
 'use strict';
 
+// Empty string the store the searched input value
+let searchInputEl;
+// Empty variable for the map constructor
+let map;
+// Object to store the lat and lng
+let coordinates;
+// Name of the location
+let locationName;
+
 const key = 'AIzaSyCxxgDfu2qDm0BdsQyrxeBQnPOtJWJO1RU';
 
-// # GEOLOCATION API
-// let locationName = $('#search-box').val();
-let locationName = 'London';
-const geoLocationURL = `https://maps.googleapis.com/maps/api/geocode/json?address=${locationName}&key=${key}
+$('#search-btn').click(function (e) {
+	e.preventDefault();
+
+	// # GEOLOCATION API
+	searchInputEl = $('#search-box').val();
+	const geoLocationURL = `https://maps.googleapis.com/maps/api/geocode/json?address=${searchInputEl}&key=${key}
 `;
 
-// Object to store the lat and lng
-let coordinates = {};
+	console.log(searchInputEl);
 
-$.ajax({
-	type: 'GET',
-	url: geoLocationURL,
-	dataType: 'json',
-	success: response => {
-		// console.log(response.results);
+	$.ajax({
+		type: 'GET',
+		url: geoLocationURL,
+		success: function (response) {
+			// console.log(response);
+			// console.log(response.results);
+			// console.log(response.results[0]);
+			// The name of the city
+			// console.log(response.results[0].formatted_address);
+			// Coordinates of the city
+			// console.log(response.results[0].geometry.location);
 
-		console.log(
-			`${response.results[0].address_components[0].long_name}, ${response.results[0].address_components[3].long_name}`
+			locationName = response.results[0].formatted_address;
+			coordinates = response.results[0].geometry.location;
+			console.log(locationName);
+			console.log(coordinates);
+		},
+
+		// # MAPS API
+	}).then(function initMap() {
+		// coordinates of the location
+		// ! ----------------------------------------------------------
+		const location = new google.maps.LatLng(coordinates);
+		// ! ----------------------------------------------------------
+
+		// Properties of the map
+		let mapProperties = {
+			// Position to be centred at
+			center: location,
+			// Default zoom when map renders
+			zoom: 6,
+		};
+
+		// Creates the map with the properties passed
+		map = new google.maps.Map(
+			document.querySelector('#google-map'),
+			mapProperties
 		);
 
-		coordinates.Lat = parseFloat(response.results[0].geometry.location.lat);
-		coordinates.Lng = parseFloat(response.results[0].geometry.location.lng);
-	},
-}).then(initMap);
-
-$('#search-box').submit(initMap);
-
-// Initialize and creates the map
-function initMap() {
-	// The coordinates of the location
-	// const location = new google.maps.LatLng(51.508742, -0.12085);
-	// const location = { lat: 51.508742, lng: -0.12085 };
-	const location = new google.maps.LatLng(coordinates.Lat, coordinates.Lng);
-	// const location = { lat: coordinates.Lat, lng: coordinates.Lng };
-
-	// The map, centred at the location
-	let mapProperties = {
-		center: location,
-		zoom: 6,
-	};
-
-	// Creates the map with the properties passed
-	const map = new google.maps.Map(
-		document.querySelector('#google-map'),
-		mapProperties
-	);
-
-	// * ADDITIONS TO THE MAP
-	// The marker, positioned at given coordinates
-	const marker = new google.maps.Marker({
-		position: location,
-		map: map,
+		// * FEATURES FOR THE MAP
+		// The marker, positioned at given coordinates
+		const marker = new google.maps.Marker({
+			position: location,
+			map: map,
+		});
+		// Zoom to 9 when clicking on marker
+		google.maps.event.addListener(marker, 'click', function () {
+			var pos = map.getZoom();
+			map.setZoom(10);
+			map.setCenter(marker.getPosition());
+		});
 	});
-	// Zoom to 9 when clicking on marker
-	google.maps.event.addListener(marker, 'click', function () {
-		var pos = map.getZoom();
-		map.setZoom(10);
-		map.setCenter(marker.getPosition());
-	});
-}
-
-console.log(coordinates);
+});

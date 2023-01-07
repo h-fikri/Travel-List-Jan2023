@@ -4,7 +4,7 @@
 // -------------------------------
 
 var API_KEY = "6KNhdCaJ8Ct-wL5wW3cjzWPIC-Os2V-DTAJxL1-u2HA";
-var targetId = "images"; // change the ID of the html element where the images will be appended to (don't include the # in the name)
+var targetId = "photos"; // change the ID of the html element where the images will be appended to (don't include the # in the name)
 
 // function called with a cityName parameter
 function getUnsplashImages(cityName) {
