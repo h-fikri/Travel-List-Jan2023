@@ -11,6 +11,11 @@ $(document).ready(function () {
 $("#search-btn").on("click", function (event) {
   event.preventDefault();
   var cityInput = $("#search-box").val().trim();
+  if (cityInput === "" || cityInput === undefined) {
+    alert("Please, input a city name"); //we need to change this to a MODAL
+    return;
+  }
+
   getUnsplashImages(cityInput);
   addCityToCities(cityInput);
   addToLocalStorage();
