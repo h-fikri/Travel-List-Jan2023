@@ -30,7 +30,7 @@ body {
 #favourites-heading {
 	color: var(--secondary-text);
 	border-bottom: 2px solid var(--secondary-text);
-
+}
 #search {
 	background-image: url("../../design/jumbotron.jpg");
 	background-position: center;
