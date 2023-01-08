@@ -32,6 +32,7 @@ function getCitiesFromLocalStorage() {
 
 // helper function that Captalises city name
 function capitalizeCityName(city) {
+  city = city.toLowerCase();
   return city.charAt(0).toUpperCase() + city.slice(1);
 }
 
