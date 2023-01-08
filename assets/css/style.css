@@ -21,9 +21,15 @@ body {
 }
 
 #google-map {
-	height: 400px;
+	/* height: 400px; */
+	aspect-ratio: 1 / 1;
 	width: 100%;
 }
+
+
+#favourites-heading {
+	color: var(--secondary-text);
+	border-bottom: 2px solid var(--secondary-text);
 
 #search {
 	background-image: url("../../design/jumbotron.jpg");
@@ -77,4 +83,5 @@ h1 {
 	color: var(--white);
 	transition-duration: 0.5s;
 	transition-timing-function: ease-in;
+
 }
