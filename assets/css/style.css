@@ -1,7 +1,23 @@
+:root {
+	--black: #000000;
+	--white: #FFFFFF;
+	--main-title: #0D47A1;
+	--secondary-title: #1E88E5;
+	--page-bg: #E3F2FD;
+	--primary-btn-bg: #42A5F5;
+	--primary-btn-bg-hover: #0D47A1;
+	--secondary-btn-bg: #E3F2FD;
+	--secondary-btn-bg-hover: #90CAF9;
+}
+
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+}
+
+body {
+	background-color: var(--page-bg);
 }
 
 #google-map {
@@ -10,7 +26,62 @@
 	width: 100%;
 }
 
+
 #favourites-heading {
 	color: var(--secondary-text);
 	border-bottom: 2px solid var(--secondary-text);
+
+#search {
+	background-image: url("../../design/jumbotron.jpg");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#jumbotron {
+	background-color: transparent;
+}
+
+h1 {
+	color: var(--white);
+	text-shadow: 3px 3px 3px var(--main-title);
+}
+
+#sub-title {
+	color: var(--secondary-title);
+	text-shadow: 3px 3px 3px var(--black);
+}
+
+#search-box {
+	background-color: var(--page-bg);
+}
+
+#search-btn {
+	background-color: var(--primary-btn-bg);
+	border: none;
+	font-weight: bold;
+	transition-duration: 0.5s;
+	transition-timing-function: ease-out;
+}
+
+#search-btn:hover {
+	background-color: var(--primary-btn-bg-hover);
+	transition-duration: 0.5s;
+	transition-timing-function: ease-in;
+}
+
+#random-btn {
+	background-color: var(--secondary-btn-bg);
+	border: none;
+	color: #808080;
+	transition-duration: 0.5s;
+	transition-timing-function: ease-out;
+}
+
+#random-btn:hover {
+	background-color: var(--secondary-btn-bg-hover);
+	color: var(--white);
+	transition-duration: 0.5s;
+	transition-timing-function: ease-in;
+
 }
