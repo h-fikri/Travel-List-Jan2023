@@ -10,3 +10,7 @@
 	width: 100%;
 }
 
+#favourites-heading {
+	color: var(--secondary-text);
+	border-bottom: 2px solid var(--secondary-text);
+}
