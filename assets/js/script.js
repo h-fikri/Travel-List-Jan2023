@@ -20,6 +20,9 @@ $("#random-btn").on("click", function () {
   var randomCity = getRandomCity();
   console.log(randomCity);
   getUnsplashImages(randomCity);
+  addCityToCities(randomCity);
+  addToLocalStorage();
+  getCitiesFromLocalStorage();
 });
 
 // user input form event listener - returning 4 images based on input
@@ -27,6 +30,9 @@ $("#search-btn").on("click", function (event) {
   event.preventDefault();
   var cityInput = $("#search-box").val().trim();
   getUnsplashImages(cityInput);
+  addCityToCities(cityInput);
+  addToLocalStorage();
+  getCitiesFromLocalStorage();
   $("#search-box").val(""); // empty input display
 });
 

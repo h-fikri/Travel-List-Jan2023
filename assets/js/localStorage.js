@@ -3,15 +3,16 @@ var cities = [];
 // function that ADDS city to cities state (array above)
 function addCityToCities(city) {
   let cityExists = false;
+  console.log(`add city to Cities: ${cities}`);
   cities.map((ct) => {
-    if (ct.cityName === city) {
-      console.log(`city already exists`);
+    if (ct === city) {
+      // console.log(`city already exists`);
       cityExists = true;
       return;
     }
   });
   if (!cityExists) {
-    console.log("It doesnt exist so I add it!");
+    // console.log("It doesnt exist so I add it!");
     cities.push(city);
   }
 }
@@ -27,5 +28,7 @@ function getCitiesFromLocalStorage() {
   if (storedCities !== null) {
     cities = storedCities;
   }
-  console.log(`Cities: ${cities}`);
+  // console.log(`Cities: ${cities}`);
 }
+
+// add function that renders buttons of cities from LS in #favorites
