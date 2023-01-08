@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // // * EVENT LISTENER FOR SEARCH BUTTON
 // $('#search-btn').click(function (e) {
@@ -15,11 +15,11 @@
 
 //* EVENT LISTENER FOR RANDOM CITY BUTTON
 
-$('#random-btn').on('click', function () {
-	console.log('random clicked');
-	var randomCity = getRandomCity();
-	console.log(randomCity);
-	getUnsplashImages(randomCity);
+$("#random-btn").on("click", function () {
+  console.log("random clicked");
+  var randomCity = getRandomCity();
+  console.log(randomCity);
+  getUnsplashImages(randomCity);
 });
 
 // user input form event listener - returning 4 images based on input
@@ -31,3 +31,8 @@ $("#search-btn").on("click", function (event) {
 });
 
 // ---------------------------
+
+// event listener for page Load
+$(document).ready(function () {
+  getCitiesFromLocalStorage(); //displays cities from localStorage - in console for now
+});

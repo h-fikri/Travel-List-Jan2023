@@ -1,11 +1,6 @@
 var cities = [];
 
-// function that stores cities to localstorage
-function addToLocalStorage(cities) {
-  localStorage.setItem("cities", JSON.stringify(cities));
-}
-
-// function that adds city cities state
+// function that ADDS city to cities state (array above)
 function addCityToCities(city) {
   let cityExists = false;
   cities.map((ct) => {
@@ -19,4 +14,18 @@ function addCityToCities(city) {
     console.log("It doesnt exist so I add it!");
     cities.push(city);
   }
+}
+
+// function that ADDS cities to localstorage
+function addToLocalStorage() {
+  localStorage.setItem("cities", JSON.stringify(cities));
+}
+
+// function that READS cities from localStorage
+function getCitiesFromLocalStorage() {
+  var storedCities = JSON.parse(localStorage.getItem("cities"));
+  if (storedCities !== null) {
+    cities = storedCities;
+  }
+  console.log(`Cities: ${cities}`);
 }
