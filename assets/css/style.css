@@ -45,7 +45,7 @@ h1 {
   background-color: var(--page-bg);
 }
 
-#search-btn {
+#search-btn, #save-btn {
   background-color: var(--primary-btn-bg);
   border: none;
   font-weight: bold;
@@ -53,7 +53,7 @@ h1 {
   transition-timing-function: ease-out;
 }
 
-#search-btn:hover {
+#search-btn:hover, #save-btn:hover {
   background-color: var(--primary-btn-bg-hover);
   transition-duration: 0.5s;
   transition-timing-function: ease-in;
