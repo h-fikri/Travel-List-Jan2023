@@ -23,6 +23,7 @@ $("#random-btn").on("click", function () {
   addCityToCities(randomCity);
   addToLocalStorage();
   getCitiesFromLocalStorage();
+  displayCurrentCityName(randomCity);
 });
 
 // user input form event listener - returning 4 images based on input
@@ -33,6 +34,7 @@ $("#search-btn").on("click", function (event) {
   addCityToCities(cityInput);
   addToLocalStorage();
   getCitiesFromLocalStorage();
+  displayCurrentCityName(cityInput);
   $("#search-box").val(""); // empty input display
 });
 
@@ -42,3 +44,9 @@ $("#search-btn").on("click", function (event) {
 $(document).ready(function () {
   getCitiesFromLocalStorage(); //displays cities from localStorage - in console for now
 });
+
+// function displaying city in #current-city element
+function displayCurrentCityName(cityName) {
+  var capitalizedCity = capitalizeCityName(cityName);
+  $("#current-city").text(capitalizedCity);
+}
