@@ -98,11 +98,22 @@ h1 {
 
 #google-map {
   /* height: 400px; */
-  aspect-ratio: 1 / 1;
   width: 100%;
+  aspect-ratio: 1 / 1;
 }
 
 #favourites-heading {
   color: var(--secondary-title);
   border-bottom: 2px solid var(--secondary-title);
+}
+
+#images .city-images {
+  max-width: 100%;
+}
+ 
+#images .city-images img {
+  /* display: inline-block; */
+  /* width: 100%; */
+  /* max-height: 66%; */
+  /* object-fit: cover; */
 }
