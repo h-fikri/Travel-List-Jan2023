@@ -1,4 +1,7 @@
-'use strict';
+"use strict";
+
+var currentCity = ""; // local state of current city for easier use in all event listeners
+
 
 // EVENT LISTENER FOR PAGE LOAD - anything happening on PAGE LOAD should be in here
 
@@ -27,6 +30,7 @@ $('#search-btn').on('click', function (event) {
 
 //* EVENT LISTENER FOR RANDOM CITY BUTTON - anything that happens when RANDOM pressed should be in here
 
+
 $('#random-btn').on('click', function () {
 	console.log('random clicked');
 	var randomCity = getRandomCity();
@@ -39,6 +43,42 @@ $('#random-btn').on('click', function () {
 	getCitiesFromLocalStorage();
 	displayCurrentCityName(randomCity);
 });
+
+
+// EVENT LISTENER FOR FAVORITES BUTTON - anything that happens when ADD TO FAVORITES clicked should be in here
+
+$("#save-btn").on("click", function () {
+  console.log("favorites clicked");
+  addCityToCities(currentCity);
+  addToLocalStorage();
+  renderFavoritesButtons();
+});
+
+// EVENT LISTENER FOR CITY BUTTONS IN FAVORITES
+
+$(document).on("click", ".faves", function () {
+  var city = $(this).attr("data-city");
+  currentCity = city;
+  getUnsplashImages(currentCity);
+  displayCurrentCityName(currentCity);
+  // get map function here - to fetch map again
+});
+
+// // * EVENT LISTENER FOR SEARCH BUTTON
+// $('#search-btn').click(function (e) {
+// 	e.preventDefault();
+
+// 	const searchInputEL = $('#search-box');
+
+// 	if (searchInputEL.val() === '' || searchInputEL.val() === undefined) {
+// 		alert('Please, input a city name');
+// 	}
+// });
+
+// $('#search-box').submit(initMap);
+
+// ---------------------------
+
 
 // HELPER FUNCTIONS
 

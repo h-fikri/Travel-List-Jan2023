@@ -30,6 +30,7 @@ function getCitiesFromLocalStorage() {
     cities = storedCities;
   }
   console.log(`LocalStorage Cities: ${cities}`);
+  renderFavoritesButtons();
 }
 
 // helper function that Capitalizes city name
@@ -46,4 +47,15 @@ function capitalizeCityName(city) {
   return newCityArray.join(" ");
 }
 
-// add function that renders buttons of cities from LS in #favorites
+// function that renders buttons of cities from LS in #favorites
+function renderFavoritesButtons() {
+  $("#favourites-list").empty();
+
+  cities.map(function (ct) {
+    var btnEl = $("<button>");
+    btnEl.addClass("btn rounded-pill col-12 col-sm-6 col-lg-12 m-1 faves");
+    btnEl.attr("data-city", ct);
+    btnEl.text(ct);
+    $("#favourites-list").append(btnEl);
+  });
+}
