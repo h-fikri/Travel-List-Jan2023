@@ -39,6 +39,8 @@ function displayImages(imagesInfoArray) {
     $(`#${targetIds[i]}`).empty(); // empty previous content of each
     imgEl = $("<img>").attr("src", image.url);
     imgEl.attr("alt", image.alt);
+    var classes = "img-fluid rounded";
+    imgEl.attr("class", classes);
     $(`#${targetIds[i]}`).append(imgEl);
   });
 }
