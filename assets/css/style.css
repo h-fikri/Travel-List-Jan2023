@@ -16,12 +16,16 @@
   padding: 0;
 }
 
+.navbar-brand {
+  margin-left: 1rem;
+}
+
 body {
   background-color: var(--page-bg);
 }
 
 #search {
-  background-image: url("../../design/jumbotron.jpg");
+  background-image: url("../../design/jumbotron2.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -29,6 +33,11 @@ body {
 
 #jumbotron {
   background-color: transparent;
+  /* background-image: url("../../design/jumbotron.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1000; */
 }
 
 h1 {
@@ -45,7 +54,8 @@ h1 {
   background-color: var(--page-bg);
 }
 
-#search-btn, #save-btn {
+#search-btn,
+#save-btn {
   background-color: var(--primary-btn-bg);
   border: none;
   font-weight: bold;
@@ -53,7 +63,8 @@ h1 {
   transition-timing-function: ease-out;
 }
 
-#search-btn:hover, #save-btn:hover {
+#search-btn:hover,
+#save-btn:hover {
   background-color: var(--primary-btn-bg-hover);
   transition-duration: 0.5s;
   transition-timing-function: ease-in;
