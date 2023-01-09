@@ -41,6 +41,17 @@ $("#save-btn").on("click", function () {
   console.log("favorites clicked");
   addCityToCities(currentCity);
   addToLocalStorage();
+  renderFavoritesButtons();
+});
+
+// EVENT LISTENER FOR CITY BUTTONS IN FAVORITES
+
+$(document).on("click", ".faves", function () {
+  var city = $(this).attr("data-city");
+  currentCity = city;
+  getUnsplashImages(currentCity);
+  displayCurrentCityName(currentCity);
+  // get map function here - to fetch map again
 });
 
 // // * EVENT LISTENER FOR SEARCH BUTTON
