@@ -1,8 +1,10 @@
-var cities = [];
+var cities = []; //temporary local state
 
 // function that ADDS city to cities state (array above)
 function addCityToCities(city) {
   let cityExists = false;
+  // capitalize city name before comparing with previous searches
+  city = capitalizeCityName(city);
   cities.map((ct) => {
     if (ct === city) {
       // console.log(`city already exists`);
@@ -12,11 +14,11 @@ function addCityToCities(city) {
   });
   if (!cityExists) {
     // console.log("It doesnt exist so I add it!");
-    cities.push(capitalizeCityName(city));
+    cities.push(city);
   }
 }
 
-// function that ADDS cities to localstorage
+// function that ADDS cities to localStorage
 function addToLocalStorage() {
   localStorage.setItem("cities", JSON.stringify(cities));
 }
@@ -30,9 +32,18 @@ function getCitiesFromLocalStorage() {
   console.log(`LocalStorage Cities: ${cities}`);
 }
 
-// helper function that Captalises city name
+// helper function that Capitalizes city name
+
 function capitalizeCityName(city) {
-  return city.charAt(0).toUpperCase() + city.slice(1);
+  city = city.toLowerCase();
+  // for cities with many words capitalize each one below
+  cityArray = city.split(" ");
+  var newCityArray = [];
+  cityArray.map((word) => {
+    word = word.charAt(0).toUpperCase() + word.slice(1);
+    newCityArray.push(word);
+  });
+  return newCityArray.join(" ");
 }
 
 // add function that renders buttons of cities from LS in #favorites
