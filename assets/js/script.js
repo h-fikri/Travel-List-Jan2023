@@ -41,6 +41,7 @@ $("#save-btn").on("click", function () {
   console.log("favorites clicked");
   addCityToCities(currentCity);
   addToLocalStorage();
+  renderFavoritesButtons();
 });
 
 // // * EVENT LISTENER FOR SEARCH BUTTON
