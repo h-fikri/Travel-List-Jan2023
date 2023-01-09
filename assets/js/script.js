@@ -1,5 +1,5 @@
 "use strict";
-
+var currentCity = "";
 // EVENT LISTENER FOR PAGE LOAD - anything happening on PAGE LOAD should be in here
 
 $(document).ready(function () {
@@ -17,8 +17,9 @@ $("#search-btn").on("click", function (event) {
   }
 
   getUnsplashImages(cityInput);
-  addCityToCities(cityInput);
-  addToLocalStorage();
+  currentCity = cityInput;
+  // addCityToCities(cityInput);
+  // addToLocalStorage();
   getCitiesFromLocalStorage();
   displayCurrentCityName(cityInput);
   $("#search-box").val(""); // empty input display
@@ -35,6 +36,14 @@ $("#random-btn").on("click", function () {
   addToLocalStorage();
   getCitiesFromLocalStorage();
   displayCurrentCityName(randomCity);
+});
+
+// EVENT LISTENER FOR FAVORITES BUTTON - anything that happens when ADD TO FAVORITES clicked should be in here
+
+$("#save-btn").on("click", function () {
+  console.log("favorites clicked");
+  addCityToCities(currentCity);
+  addToLocalStorage();
 });
 
 // // * EVENT LISTENER FOR SEARCH BUTTON
