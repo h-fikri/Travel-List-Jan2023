@@ -40,6 +40,13 @@ body {
   z-index: -1000; */
 }
 
+.card-image {
+  background-image: url("../../design/imgbox1.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 h1 {
   color: var(--white);
   text-shadow: 3px 3px 3px var(--primary-title);
