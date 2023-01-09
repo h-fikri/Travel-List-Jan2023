@@ -1,4 +1,5 @@
 "use strict";
+var currentCity = ""; // local state of current city for easier use in all event listeners
 
 // EVENT LISTENER FOR PAGE LOAD - anything happening on PAGE LOAD should be in here
 
@@ -15,10 +16,8 @@ $("#search-btn").on("click", function (event) {
     alert("Please, input a city name"); //we need to change this to a MODAL
     return;
   }
-
   getUnsplashImages(cityInput);
-  addCityToCities(cityInput);
-  addToLocalStorage();
+  currentCity = cityInput;
   getCitiesFromLocalStorage();
   displayCurrentCityName(cityInput);
   $("#search-box").val(""); // empty input display
@@ -29,12 +28,19 @@ $("#search-btn").on("click", function (event) {
 $("#random-btn").on("click", function () {
   console.log("random clicked");
   var randomCity = getRandomCity();
-  console.log(randomCity);
+  // console.log(randomCity);
+  currentCity = randomCity;
   getUnsplashImages(randomCity);
-  addCityToCities(randomCity);
-  addToLocalStorage();
   getCitiesFromLocalStorage();
   displayCurrentCityName(randomCity);
+});
+
+// EVENT LISTENER FOR FAVORITES BUTTON - anything that happens when ADD TO FAVORITES clicked should be in here
+
+$("#save-btn").on("click", function () {
+  console.log("favorites clicked");
+  addCityToCities(currentCity);
+  addToLocalStorage();
 });
 
 // // * EVENT LISTENER FOR SEARCH BUTTON
