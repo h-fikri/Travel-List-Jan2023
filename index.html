@@ -25,12 +25,12 @@
   <body>
     <header>
       <!-- NAVBAR -->
-      <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">
+      <nav class="navbar navbar-light bg-transparent pb-0">
+        <a class="navbar-brand" href=".">
           <img
-            src="./design/Logo (2).png"
-            width="50"
-            height="50"
+            src="./design/Logo1.png"
+            width="60px"
+            height="60px"
             alt="Travel Bucket List Logo"
           />
         </a>
@@ -88,10 +88,145 @@
           </div>
         </div>
       </div>
-      <div class="row" id="photos">
-        <div class="col-12"></div>
+
+      <!-- fixed images for illustration START-->
+
+      <!-- Card group -->
+      <div class="card-group">
+        <!-- Card -->
+        <div class="card mb-4" id="card1">
+          <!-- Card image -->
+          <div class="view overlay">
+            <img
+              class="card-img-top"
+              src="/design/imgbox1.jpg"
+              alt="Card image cap"
+            />
+            <a href="#!">
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+
+          <!-- Card content -->
+          <div class="card-body">
+            <!-- Title -->
+            <h4 class="card-title">India</h4>
+            <!-- Text -->
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+            <button type="button" class="btn btn-primary btn-md">
+              Read more
+            </button>
+          </div>
+          <!-- Card content -->
+        </div>
+        <!-- Card -->
+
+        <!-- Card -->
+        <div class="card mb-4" id="card2">
+          <!-- Card image -->
+          <div class="view overlay">
+            <img
+              class="card-img-top"
+              src="/design/imgbox2.jpg"
+              alt="Card image cap"
+            />
+            <a href="#!">
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+
+          <!-- Card content -->
+          <div class="card-body">
+            <!-- Title -->
+            <h4 class="card-title">Indonesia</h4>
+            <!-- Text -->
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+            <button type="button" class="btn btn-primary btn-md">
+              Read more
+            </button>
+          </div>
+          <!-- Card content -->
+        </div>
+        <!-- Card -->
+
+        <!-- Card -->
+        <div class="card mb-4" id="card3">
+          <!-- Card image -->
+          <div class="view overlay">
+            <img
+              class="card-img-top"
+              src="/design/imgbox3.jpg"
+              alt="Card image cap"
+            />
+            <a href="#!">
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+
+          <!-- Card content -->
+          <div class="card-body">
+            <!-- Title -->
+            <h4 class="card-title">Norway</h4>
+            <!-- Text -->
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+            <button type="button" class="btn btn-primary btn-md">
+              Read more
+            </button>
+          </div>
+          <!-- Card content -->
+        </div>
+        <!-- Card -->
+
+        <!-- Card -->
+        <div class="card mb-4" id="card4">
+          <!-- Card image -->
+          <div class="view overlay">
+            <img
+              class="card-img-top"
+              src="/design/imgbox4.jpg"
+              alt="Card image cap"
+            />
+            <a href="#!">
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+
+          <!-- Card content -->
+          <div class="card-body">
+            <!-- Title -->
+            <h4 class="card-title">Sweden</h4>
+            <!-- Text -->
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+            <button type="button" class="btn btn-primary btn-md">
+              Read more
+            </button>
+          </div>
+          <!-- Card content -->
+        </div>
+        <!-- Card -->
       </div>
+      <!-- Card group -->
+
+      <!-- fixed images for illustration END-->
+
       <!-- FIRST SLIDE END -->
+
       <!-- SECOND SLIDE START (result section: random images and google map) -->
       <div class="row my-2" id="results">
         <div class="col-12">
@@ -158,7 +293,6 @@
                   </button>
                 </div>
               </div>
-
             </div>
             <!-- map -->
             <div class="col-12 col-lg-5 my-1" id="google-map">
@@ -184,39 +318,39 @@
                 class="img-fluid"
                 src="https://via.placeholder.com/400x600.png?text=favourites"
               />
-
             </div>
           </div>
         </div>
       </div>
     </main>
-    <footer class="w-100 py-4 flex-shrink-0">
-      <div class="container py-4">
-        <div class="row gy-4 gx-5">
-          <div class="col-lg-4 col-md-6">
-            <h5 class="h1 text-white">FB.</h5>
+
+    <!-- FOOTER START -->
+    <footer class="w-100 py-4 flex-shrink-0 bg-light">
+      <div class="container py-2">
+        <div class="row gy-2 gx-2">
+          <div class="col-lg-4 col-md-6 text-left">
+            <h5 class="text-dark mb-3">Travel Bucket List</h5>
             <p class="small text-muted">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt.
+              This is the first stage developemnt as an MVP of Travel Bucket
+              List.
             </p>
             <p class="small text-muted mb-0">
-              &copy; Copyrights. 2023. Nameless Ghouls.
+              &copy; Copyrights 2023. Nameless Ghouls Inc.
             </p>
           </div>
-          <div class="col-lg-2 col-md-6">
-            <h5 class="text-white mb-3">Quick links</h5>
+          <div class="col-lg-4 col-md-6 text-center">
+            <h5 class="text-dark mb-3">Quick links</h5>
             <ul class="list-unstyled text-muted">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Get started</a></li>
-              <li><a href="#">FAQ</a></li>
+              <li><a href=".">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">The Project</a></li>
             </ul>
           </div>
-          <div class="col-lg-4 col-md-6">
-            <h5 class="text-white mb-3">Newsletter</h5>
+          <div class="col-lg-4 col-md-6 text-right">
+            <h5 class="text-dark mb-3">Newsletter</h5>
             <p class="small text-muted">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt.
+              Subscribe to our email list to stay up-to-date with the latest
+              updates and features.
             </p>
             <form action="#">
               <div class="input-group mb-3">
@@ -240,6 +374,7 @@
         </div>
       </div>
     </footer>
+    <!-- FOOTER END -->
 
     <!-- BOOTSTRAP JAVASCRIPT FILES -->
     <script
