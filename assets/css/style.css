@@ -1,7 +1,7 @@
 :root {
   --black: #000000;
   --white: #ffffff;
-  --main-title: #0d47a1;
+  --primary-title: #0d47a1;
   --secondary-title: #1e88e5;
   --page-bg: #e3f2fd;
   --primary-btn-bg: #42a5f5;
@@ -20,16 +20,6 @@ body {
   background-color: var(--page-bg);
 }
 
-#google-map {
-  /* height: 400px; */
-  aspect-ratio: 1 / 1;
-  width: 100%;
-}
-
-#favourites-heading {
-  color: var(--secondary-text);
-  border-bottom: 2px solid var(--secondary-text);
-}
 #search {
   background-image: url("../../design/jumbotron.jpg");
   background-position: center;
@@ -43,7 +33,7 @@ body {
 
 h1 {
   color: var(--white);
-  text-shadow: 3px 3px 3px var(--main-title);
+  text-shadow: 3px 3px 3px var(--primary-title);
 }
 
 #sub-title {
@@ -55,7 +45,7 @@ h1 {
   background-color: var(--page-bg);
 }
 
-#search-btn {
+#search-btn, #save-btn {
   background-color: var(--primary-btn-bg);
   border: none;
   font-weight: bold;
@@ -63,7 +53,7 @@ h1 {
   transition-timing-function: ease-out;
 }
 
-#search-btn:hover {
+#search-btn:hover, #save-btn:hover {
   background-color: var(--primary-btn-bg-hover);
   transition-duration: 0.5s;
   transition-timing-function: ease-in;
@@ -82,4 +72,19 @@ h1 {
   color: var(--white);
   transition-duration: 0.5s;
   transition-timing-function: ease-in;
+}
+
+#current-city {
+  color: var(--primary-title);
+}
+
+#google-map {
+  /* height: 400px; */
+  aspect-ratio: 1 / 1;
+  width: 100%;
+}
+
+#favourites-heading {
+  color: var(--secondary-title);
+  border-bottom: 2px solid var(--secondary-title);
 }
