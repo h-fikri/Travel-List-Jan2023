@@ -18,6 +18,12 @@ function addCityToCities(city) {
   }
 }
 
+// function that REMOVES last city from cities state (array above) - and ADDS new cities array to localStorage
+function removeCityFromCities() {
+  cities.pop();
+  addToLocalStorage();
+}
+
 // function that ADDS cities to localStorage
 function addToLocalStorage() {
   localStorage.setItem("cities", JSON.stringify(cities));
