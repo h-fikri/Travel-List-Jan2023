@@ -40,11 +40,28 @@ body {
   z-index: -1000; */
 }
 
-.card-image {
+/* .card-image {
   background-image: url("../../design/imgbox1.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+} */
+
+.card-img-top {
+  width: 100%;
+  aspect-ratio: 1.5 / 1;
+  object-fit: cover;
+}
+
+.card {
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: 2px 2px 2px 2px #94bbe2;
+  transform: scale(1.02);
+  z-index: 1000;
 }
 
 h1 {
@@ -110,7 +127,7 @@ h1 {
 #images .city-images {
   max-width: 100%;
 }
- 
+
 #images .city-images img {
   width: 100%;
   aspect-ratio: 1.5 / 1;
