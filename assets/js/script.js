@@ -47,6 +47,13 @@ $("#save-btn").on("click", function () {
   renderFavoritesButtons();
 });
 
+// EVENT LISTENER FOR REMOVE BUTTON - anything that happens when REMOVE RECENT CITY is clicked should be in here
+
+$("#remove-btn").on("click", function () {
+  removeCityFromCities();
+  renderFavoritesButtons();
+});
+
 // EVENT LISTENER FOR CITY BUTTONS IN FAVORITES
 
 $(document).on("click", ".faves", function () {
