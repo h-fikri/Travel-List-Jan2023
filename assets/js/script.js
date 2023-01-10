@@ -1,54 +1,45 @@
 "use strict";
 
-var currentCity = ""; // local state of current city for easier use in all event listeners
-
+var currentCity = "London"; // local state of current city for easier use in all event listeners - London as default
 
 // EVENT LISTENER FOR PAGE LOAD - anything happening on PAGE LOAD should be in here
 
 $(document).ready(function () {
-	getCitiesFromLocalStorage(); //displays cities from localStorage - in console for now
+  getCitiesFromLocalStorage();
+  createMap(currentCity);
+  getUnsplashImages(currentCity);
+  displayCurrentCityName(currentCity);
 });
 
 // EVENT LISTENER FOR USER INPUT IN FORM - anything that happens when SEARCH is clicked should be here
 
-$('#search-btn').on('click', function (event) {
-	event.preventDefault();
-	var cityInput = $('#search-box').val().trim();
-	if (cityInput === '' || cityInput === undefined) {
-		alert('Please, input a city name'); //we need to change this to a MODAL
-		return;
-	}
-
-	createMap(cityInput);
-	getUnsplashImages(cityInput);
-	addCityToCities(cityInput);
-	addToLocalStorage();
-	getCitiesFromLocalStorage();
-	displayCurrentCityName(cityInput);
-	$('#search-box').val(''); // empty input display
+$("#search-btn").on("click", function (event) {
+  event.preventDefault();
+  var cityInput = $("#search-box").val().trim();
+  if (cityInput === "" || cityInput === undefined) {
+    alert("Please, input a city name"); //we need to change this to a MODAL
+    return;
+  }
+  createMap(cityInput);
+  getUnsplashImages(cityInput);
+  getCitiesFromLocalStorage();
+  displayCurrentCityName(cityInput);
+  $("#search-box").val(""); // empty input display
 });
 
 //* EVENT LISTENER FOR RANDOM CITY BUTTON - anything that happens when RANDOM pressed should be in here
 
-
-$('#random-btn').on('click', function () {
-	console.log('random clicked');
-	var randomCity = getRandomCity();
-	console.log(randomCity);
-
-	createMap(randomCity);
-	getUnsplashImages(randomCity);
-	addCityToCities(randomCity);
-	addToLocalStorage();
-	getCitiesFromLocalStorage();
-	displayCurrentCityName(randomCity);
+$("#random-btn").on("click", function () {
+  var randomCity = getRandomCity();
+  createMap(randomCity);
+  getUnsplashImages(randomCity);
+  getCitiesFromLocalStorage();
+  displayCurrentCityName(randomCity);
 });
-
 
 // EVENT LISTENER FOR FAVORITES BUTTON - anything that happens when ADD TO FAVORITES clicked should be in here
 
 $("#save-btn").on("click", function () {
-  console.log("favorites clicked");
   addCityToCities(currentCity);
   addToLocalStorage();
   renderFavoritesButtons();
@@ -62,28 +53,15 @@ $(document).on("click", ".faves", function () {
   getUnsplashImages(currentCity);
   displayCurrentCityName(currentCity);
   // get map function here - to fetch map again
+  createMap(currentCity);
 });
 
-// // * EVENT LISTENER FOR SEARCH BUTTON
-// $('#search-btn').click(function (e) {
-// 	e.preventDefault();
-
-// 	const searchInputEL = $('#search-box');
-
-// 	if (searchInputEL.val() === '' || searchInputEL.val() === undefined) {
-// 		alert('Please, input a city name');
-// 	}
-// });
-
-// $('#search-box').submit(initMap);
-
 // ---------------------------
-
 
 // HELPER FUNCTIONS
 
 // function displaying city in #current-city element
 function displayCurrentCityName(cityName) {
-	var capitalizedCity = capitalizeCityName(cityName);
-	$('#current-city').text(capitalizedCity);
+  var capitalizedCity = capitalizeCityName(cityName);
+  $("#current-city").text(capitalizedCity);
 }
