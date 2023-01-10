@@ -20,6 +20,7 @@ $("#search-btn").on("click", function (event) {
     alert("Please, input a city name"); //we need to change this to a MODAL
     return;
   }
+  currentCity = cityInput;
   createMap(cityInput);
   getUnsplashImages(cityInput);
   getCitiesFromLocalStorage();
@@ -31,6 +32,7 @@ $("#search-btn").on("click", function (event) {
 
 $("#random-btn").on("click", function () {
   var randomCity = getRandomCity();
+  currentCity = randomCity;
   createMap(randomCity);
   getUnsplashImages(randomCity);
   getCitiesFromLocalStorage();
