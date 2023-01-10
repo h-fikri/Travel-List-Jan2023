@@ -112,6 +112,9 @@ h1 {
 
 #current-city {
   color: var(--primary-title);
+  text-transform: uppercase;
+  border-bottom: 3px solid var(--primary-title);
+  font-size: 2.5rem;
 }
 
 #google-map {
