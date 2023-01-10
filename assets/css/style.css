@@ -8,6 +8,7 @@
   --primary-btn-bg-hover: #0d47a1;
   --secondary-btn-bg: #e3f2fd;
   --secondary-btn-bg-hover: #90caf9;
+  --faves-btn-bg: #2196F3;
 }
 
 * {
@@ -119,7 +120,7 @@ h1 {
   aspect-ratio: 1 / 1;
 }
 
-#favourites-heading {
+div:has(>#photos-heading), div:has(>#location-heading), div:has(>#favourites-heading) {
   color: var(--secondary-title);
   border-bottom: 2px solid var(--secondary-title);
 }
@@ -132,4 +133,19 @@ h1 {
   width: 100%;
   aspect-ratio: 1.5 / 1;
   object-fit: cover;
+}
+
+#favourites-list button.faves {
+  background-color: var(--faves-btn-bg);
+  border: none;
+  color: var(--white);
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
+}
+
+#favourites-list button.faves:hover {
+  background-color: var(--primary-btn-bg-hover);
+  color: var(--white);
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in;
 }
