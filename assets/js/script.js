@@ -21,13 +21,14 @@ $("#search-btn").on("click", function (event) {
   var cityInput = $("#search-box").val().trim();
   if (cityInput === "" || cityInput === undefined) {
     $("#search-modal").modal("show");
+    results = false;
     return;
   }
 
-  results = true;
-  scrollTo(results);
+  // results = true;
   currentCity = cityInput;
   createMap(cityInput);
+  scrollTo(results);
   getUnsplashImages(cityInput);
   getCitiesFromLocalStorage();
   displayCurrentCityName(cityInput);

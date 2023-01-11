@@ -28,26 +28,32 @@ function createMap(city) {
         case "ZERO_RESULTS":
           // alert("Sorry, your search did not match any data");
           $("#search-modal").modal("show");
+          results = false;
           break;
         case "OVER_DAILY_LIMIT":
           // alert("Please, check your API key is not missing or invalid");
           $("#search-modal").modal("show");
+          results = false;
           break;
         case "OVER_QUERY_LIMIT":
           // alert("The API key set is over its query quota");
           $("#search-modal").modal("show");
+          results = false;
           break;
         case "REQUEST_DENIED":
           // alert("Request denied");
           $("#search-modal").modal("show");
+          results = false;
           break;
         case "INVALID_REQUEST":
           // alert("Please, check the query is not missing");
           $("#search-modal").modal("show");
+          results = false;
           break;
         case "UNKNOWN_ERROR":
           // alert("Server Error");
           $("#search-modal").modal("show");
+          results = false;
           break;
 
         default:
