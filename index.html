@@ -64,7 +64,7 @@
                   <input
                     type="text"
                     id="search-box"
-                    placeholder="Search for a City"
+                    placeholder=""
                     class="col-12 my-2 border-0 rounded-pill form-control-lg"
                   />
                 </div>
@@ -206,7 +206,7 @@
           <!-- Card content -->
           <div class="card-body">
             <!-- Title -->
-            <h4 class="card-title">Sweden</h4>
+            <h4 class="card-title">Monaco</h4>
             <!-- Text -->
             <p class="card-text">
               As the heart of Europe where billionaire mingles, dock your yacht
@@ -222,7 +222,6 @@
         <!-- Card -->
       </div>
       <!-- Card group -->
-
       <!-- fixed images for illustration END-->
 
       <!-- FIRST SLIDE END -->
@@ -279,8 +278,12 @@
                       </button>
                     </div>
                   </div>
+                  <!-- remove favourites button -->
                   <div class="row">
-                    <div class="col-12 col-md-6 col-lg-12 mx-auto" id="save">
+                    <div
+                      class="col-12 col-md-6 col-lg-12 mx-auto"
+                      id="removediv"
+                    >
                       <button
                         type="button"
                         class="btn btn-danger rounded-pill col-12 my-2 form-control-lg"
@@ -291,7 +294,7 @@
                     </div>
                   </div>
                 </div>
-              </div>  
+              </div>
             </div>
             <!-- column container for map -->
             <div class="col-12 col-lg-5 p-0">
@@ -313,7 +316,7 @@
                 </div>
               </div>
               <div class="row m-0">
-                 <!-- favourites -->
+                <!-- favourites -->
                 <div class="col-12 border border-danger">
                   <div id="favourites-list" class="text-center"></div>
                 </div>
@@ -357,7 +360,7 @@
                 <input
                   class="form-control"
                   type="text"
-                  placeholder="email"
+                  placeholder="Type your email"
                   aria-label="Recipient's username"
                   aria-describedby="button-addon2"
                 />
@@ -425,5 +428,6 @@
     <script src="./assets/js/randomCity.js"></script>
     <script src="./assets/js/localStorage.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/placeholder.js"></script>
   </body>
 </html>
