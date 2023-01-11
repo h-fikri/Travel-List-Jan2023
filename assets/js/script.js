@@ -25,9 +25,8 @@ $("#search-btn").on("click", function (event) {
     return;
   }
 
-  // results = true;
   currentCity = cityInput;
-  createMap(cityInput);
+  createMap(cityInput); // if this returns results = false the scrollTo (below) will not run
   scrollTo(results);
   getUnsplashImages(cityInput);
   getCitiesFromLocalStorage();
