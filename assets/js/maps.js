@@ -62,7 +62,7 @@ function createMap(city) {
 			center: location,
 			zoom: 4,
 			mapTypeId: 'terrain',
-			disableDefaultUI: true,
+			// disableDefaultUI: true,
 			scrollwheel: false,
 		};
 
