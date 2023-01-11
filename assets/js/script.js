@@ -2,6 +2,9 @@
 
 var currentCity = "London"; // local state of current city for easier use in all event listeners - London as default
 
+// Logical variable for results
+let results = false;
+
 // EVENT LISTENER FOR PAGE LOAD - anything happening on PAGE LOAD should be in here
 
 $(document).ready(function () {
@@ -13,24 +16,30 @@ $(document).ready(function () {
 
 // * EVENT LISTENER FOR USER INPUT IN FORM - anything that happens when SEARCH is clicked should be here
 
-$("#search-btn").on("click", function (event) {
-  event.preventDefault();
-  var cityInput = $("#search-box").val().trim();
-  if (cityInput === "" || cityInput === undefined) {
+$('#search-btn').on('click', function (event) {
+	event.preventDefault();
+	var cityInput = $('#search-box').val().trim();
+	if (cityInput === "" || cityInput === undefined) {
     $("#search-modal").modal("show");
     return;
   }
-  currentCity = cityInput;
-  createMap(cityInput);
-  getUnsplashImages(cityInput);
-  getCitiesFromLocalStorage();
-  displayCurrentCityName(cityInput);
-  $("#search-box").val(""); // empty input display
+
+	results = true;
+	scrollTo(results);
+	currentCity = cityInput;
+	createMap(cityInput);
+	getUnsplashImages(cityInput);
+	getCitiesFromLocalStorage();
+	displayCurrentCityName(cityInput);
+	$('#search-box').val(''); // empty input display
+
 });
 
-//* EVENT LISTENER FOR RANDOM CITY BUTTON - anything that happens when RANDOM pressed should be in here
+// EVENT LISTENER FOR RANDOM CITY BUTTON - anything that happens when RANDOM pressed should be in here
 
 $("#random-btn").on("click", function () {
+  results = true;
+	scrollTo(results);
   var randomCity = getRandomCity();
   currentCity = randomCity;
   createMap(randomCity);
@@ -68,14 +77,25 @@ $(document).on("click", ".faves", function () {
   currentCity = city;
   getUnsplashImages(currentCity);
   displayCurrentCityName(currentCity);
-  // get map function here - to fetch map again
   createMap(currentCity);
+
 });
 
-// * HELPER FUNCTIONS
+// HELPER FUNCTIONS
 
 // function displaying city in #current-city element
 function displayCurrentCityName(cityName) {
   var capitalizedCity = capitalizeCityName(cityName);
   $("#current-city").text(capitalizedCity);
+}
+
+function scrollTo(results) {
+	if (results !== false) {
+		$('html, body').animate(
+			{
+				scrollTop: $('#results').first().offset().top,
+			},
+			2000
+		);
+	}
 }
