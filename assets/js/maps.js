@@ -24,6 +24,7 @@ function createMap(city) {
           locationName = response.results[0].formatted_address;
           coordinates = response.results[0].geometry.location;
           localStorage.setItem("location", JSON.stringify(coordinates));
+          results = true;
           break;
         case "ZERO_RESULTS":
           // if this happens modal is shown and results is set to false so no scrolling happens
