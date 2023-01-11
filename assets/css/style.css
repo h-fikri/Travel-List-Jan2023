@@ -8,6 +8,7 @@
   --primary-btn-bg-hover: #0d47a1;
   --secondary-btn-bg: #e3f2fd;
   --secondary-btn-bg-hover: #90caf9;
+  --faves-btn-bg: #2196F3;
 }
 
 * {
@@ -40,11 +41,28 @@ body {
   z-index: -1000; */
 }
 
-.card-image {
+/* .card-image {
   background-image: url("../../design/imgbox1.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+} */
+
+.card-img-top {
+  width: 100%;
+  aspect-ratio: 1.5 / 1;
+  object-fit: cover;
+}
+
+.card {
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: 2px 2px 2px 2px #94bbe2;
+  transform: scale(1.02);
+  z-index: 1000;
 }
 
 h1 {
@@ -94,6 +112,9 @@ h1 {
 
 #current-city {
   color: var(--primary-title);
+  text-transform: uppercase;
+  border-bottom: 3px solid var(--primary-title);
+  font-size: 2.5rem;
 }
 
 #google-map {
@@ -102,7 +123,7 @@ h1 {
   aspect-ratio: 1 / 1;
 }
 
-#favourites-heading {
+div:has(>#photos-heading), div:has(>#location-heading), div:has(>#favourites-heading) {
   color: var(--secondary-title);
   border-bottom: 2px solid var(--secondary-title);
 }
@@ -110,9 +131,24 @@ h1 {
 #images .city-images {
   max-width: 100%;
 }
- 
+
 #images .city-images img {
   width: 100%;
   aspect-ratio: 1.5 / 1;
   object-fit: cover;
+}
+
+#favourites-list button.faves {
+  background-color: var(--faves-btn-bg);
+  border: none;
+  color: var(--white);
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
+}
+
+#favourites-list button.faves:hover {
+  background-color: var(--primary-btn-bg-hover);
+  color: var(--white);
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in;
 }
