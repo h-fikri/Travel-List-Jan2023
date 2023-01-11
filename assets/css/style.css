@@ -79,6 +79,10 @@ h1 {
   background-color: var(--page-bg);
 }
 
+#search-box:focus-visible {
+  outline: none;
+}
+
 #search-btn,
 #save-btn {
   background-color: var(--primary-btn-bg);
