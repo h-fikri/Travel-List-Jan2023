@@ -1,22 +1,57 @@
 'use strict';
 
-// Object to store the lat and lng
-let coordinates;
 // Name of the location
 let locationName;
+// Status of the Geocoding response
+let _status;
+// Object to store the lat and lng
+let coordinates;
 
 const key = 'AIzaSyCxxgDfu2qDm0BdsQyrxeBQnPOtJWJO1RU';
 
 function createMap(city) {
-	// # GEOLOCATION API
+	// # GEOCODING API
 	const geoLocationURL = `https://maps.googleapis.com/maps/api/geocode/json?address=${city}&key=${key}`;
 
 	$.ajax({
 		type: 'GET',
 		url: geoLocationURL,
 		success: function (response) {
-			locationName = response.results[0].formatted_address;
-			coordinates = response.results[0].geometry.location;
+			_status = response.status;
+
+			switch (_status) {
+				case 'OK':
+					locationName = response.results[0].formatted_address;
+					coordinates = response.results[0].geometry.location;
+					localStorage.setItem(
+						'location',
+						JSON.stringify(coordinates)
+					);
+					break;
+				case 'ZERO_RESULTS':
+					alert('Sorry, your search did not match any data');
+					break;
+				case 'OVER_DAILY_LIMIT':
+					alert(
+						'Please, check your API key is not missing or invalid'
+					);
+					break;
+				case 'OVER_QUERY_LIMIT':
+					alert('The API key set is over its query quota');
+					break;
+				case 'REQUEST_DENIED':
+					alert('Request denied');
+					break;
+				case 'INVALID_REQUEST':
+					alert('Please, check the query is not missing');
+					break;
+				case 'UNKNOWN_ERROR':
+					alert('Server Error');
+					break;
+
+				default:
+					break;
+			}
 		},
 
 		// # MAPS API
