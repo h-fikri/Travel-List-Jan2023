@@ -2,6 +2,9 @@
 
 var currentCity = 'London'; // local state of current city for easier use in all event listeners - London as default
 
+// Logical variable for results
+let results = false;
+
 // EVENT LISTENER FOR PAGE LOAD - anything happening on PAGE LOAD should be in here
 
 $(document).ready(function () {
@@ -20,6 +23,9 @@ $('#search-btn').on('click', function (event) {
 		alert('Please, input a city name'); //we need to change this to a MODAL
 		return;
 	}
+
+	results = true;
+	scrollTo(results);
 	currentCity = cityInput;
 	createMap(cityInput);
 	getUnsplashImages(cityInput);
@@ -28,9 +34,11 @@ $('#search-btn').on('click', function (event) {
 	$('#search-box').val(''); // empty input display
 });
 
-//* EVENT LISTENER FOR RANDOM CITY BUTTON - anything that happens when RANDOM pressed should be in here
+// EVENT LISTENER FOR RANDOM CITY BUTTON - anything that happens when RANDOM pressed should be in here
 
 $('#random-btn').on('click', function () {
+	results = true;
+	scrollTo(results);
 	var randomCity = getRandomCity();
 	currentCity = randomCity;
 	createMap(randomCity);
@@ -56,26 +64,29 @@ $('#remove-btn').on('click', function () {
 
 // EVENT LISTENER FOR REMOVE BUTTON - anything that happens when REMOVE RECENT CITY is clicked should be in here
 
-$('#remove-btn').on('click', function () {
-	removeCityFromCities();
-	renderFavoritesButtons();
-});
-
-//  EVENT LISTENER FOR CITY BUTTONS IN FAVORITES
-
 $(document).on('click', '.faves', function () {
 	var city = $(this).attr('data-city');
 	currentCity = city;
 	getUnsplashImages(currentCity);
 	displayCurrentCityName(currentCity);
-	// get map function here - to fetch map again
 	createMap(currentCity);
 });
 
-// * HELPER FUNCTIONS
+// HELPER FUNCTIONS
 
 // function displaying city in #current-city element
 function displayCurrentCityName(cityName) {
 	var capitalizedCity = capitalizeCityName(cityName);
 	$('#current-city').text(capitalizedCity);
+}
+
+function scrollTo(results) {
+	if (results !== false) {
+		$('html, body').animate(
+			{
+				scrollTop: $('#results').first().offset().top,
+			},
+			2000
+		);
+	}
 }
