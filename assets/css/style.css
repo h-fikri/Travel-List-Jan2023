@@ -8,7 +8,7 @@
   --primary-btn-bg-hover: #0d47a1;
   --secondary-btn-bg: #e3f2fd;
   --secondary-btn-bg-hover: #90caf9;
-  --faves-btn-bg: #2196F3;
+  --faves-btn-bg: #2196f3;
 }
 
 * {
@@ -60,7 +60,7 @@ body {
 }
 
 .card:hover {
-  box-shadow: 2px 2px 2px 2px #94bbe2;
+  box-shadow: 0px 8px 8px #94bbe2;
   transform: scale(1.02);
   z-index: 1000;
 }
@@ -123,7 +123,9 @@ h1 {
   aspect-ratio: 1 / 1;
 }
 
-div:has(>#photos-heading), div:has(>#location-heading), div:has(>#favourites-heading) {
+div:has(> #photos-heading),
+div:has(> #location-heading),
+div:has(> #favourites-heading) {
   color: var(--secondary-title);
   border-bottom: 2px solid var(--secondary-title);
 }
@@ -138,17 +140,24 @@ div:has(>#photos-heading), div:has(>#location-heading), div:has(>#favourites-hea
   object-fit: cover;
 }
 
-#favourites-list button.faves {
+#favourites-list button.faves, #cards > * button.buttons, #contact-btn {
+  transition: none;
   background-color: var(--faves-btn-bg);
   border: none;
+  border-color: transparent;
   color: var(--white);
   transition-duration: 0.5s;
   transition-timing-function: ease-out;
 }
 
-#favourites-list button.faves:hover {
+#favourites-list button.faves:hover, #cards > * button.buttons:hover, #contact-btn:hover {
+  transition: none;
   background-color: var(--primary-btn-bg-hover);
+  border: none;
+  border-color: transparent;
   color: var(--white);
   transition-duration: 0.5s;
   transition-timing-function: ease-in;
 }
+
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;

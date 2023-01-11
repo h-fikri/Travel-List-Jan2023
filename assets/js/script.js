@@ -14,12 +14,11 @@ $(document).ready(function () {
 	displayCurrentCityName(currentCity);
 });
 
-// EVENT LISTENER FOR USER INPUT IN FORM - anything that happens when SEARCH is clicked should be here
+// * EVENT LISTENER FOR USER INPUT IN FORM - anything that happens when SEARCH is clicked should be here
 
 $('#search-btn').on('click', function (event) {
 	event.preventDefault();
 	var cityInput = $('#search-box').val().trim();
-
 	if (cityInput === '' || cityInput === undefined) {
 		alert('Please, input a city name'); //we need to change this to a MODAL
 		return;
@@ -32,7 +31,6 @@ $('#search-btn').on('click', function (event) {
 	getUnsplashImages(cityInput);
 	getCitiesFromLocalStorage();
 	displayCurrentCityName(cityInput);
-
 	$('#search-box').val(''); // empty input display
 });
 
@@ -64,7 +62,7 @@ $('#remove-btn').on('click', function () {
 	renderFavoritesButtons();
 });
 
-// EVENT LISTENER FOR CITY BUTTONS IN FAVORITES
+// EVENT LISTENER FOR REMOVE BUTTON - anything that happens when REMOVE RECENT CITY is clicked should be in here
 
 $(document).on('click', '.faves', function () {
 	var city = $(this).attr('data-city');
@@ -88,7 +86,7 @@ function scrollTo(results) {
 			{
 				scrollTop: $('#results').first().offset().top,
 			},
-			1500
+			2000
 		);
 	}
 }
