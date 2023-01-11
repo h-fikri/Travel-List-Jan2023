@@ -25,7 +25,7 @@ body {
   background-color: var(--page-bg);
 }
 
-#search {
+#header {
   background-image: url("../../design/jumbotron2.png");
   background-position: center;
   background-size: cover;
@@ -77,6 +77,10 @@ h1 {
 
 #search-box {
   background-color: var(--page-bg);
+}
+
+#search-box:focus-visible {
+  outline: none;
 }
 
 #search-btn,
@@ -140,7 +144,9 @@ div:has(> #favourites-heading) {
   object-fit: cover;
 }
 
-#favourites-list button.faves, #cards > * button.buttons, #contact-btn {
+#favourites-list button.faves,
+#cards > * button.buttons,
+#contact-btn {
   transition: none;
   background-color: var(--faves-btn-bg);
   border: none;
@@ -150,7 +156,9 @@ div:has(> #favourites-heading) {
   transition-timing-function: ease-out;
 }
 
-#favourites-list button.faves:hover, #cards > * button.buttons:hover, #contact-btn:hover {
+#favourites-list button.faves:hover,
+#cards > * button.buttons:hover,
+#contact-btn:hover {
   transition: none;
   background-color: var(--primary-btn-bg-hover);
   border: none;

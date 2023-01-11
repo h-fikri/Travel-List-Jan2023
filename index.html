@@ -17,7 +17,7 @@
 </head>
 
 <body>
-  <header>
+  <header id="header">
     <!-- NAVBAR -->
     <nav class="navbar navbar-light bg-transparent pb-0">
       <a class="navbar-brand" href=".">
@@ -33,12 +33,8 @@
         </li>
       </ul>
     </nav>
-  </header>
-
-  <!-- MAIN START -->
-  <!-- FIRST SLIDE START -->
-  <main class="container-fluid">
-    <div class="row my-2" id="search">
+    <!-- JUMBOTRON -->
+    <div class="row my-2 mx-0" id="search">
       <div class="col-12 jumbotron" id="jumbotron">
         <div class="col-12 col-sm-8 col-lg-6 mx-auto">
           <h1 class="text-center">Travel List</h1>
@@ -52,14 +48,14 @@
                 <input type="text" id="search-box" placeholder=""
                   class="col-12 my-2 border-0 rounded-pill form-control-lg" />
               </div>
-              <div class="row">
+              <div class="row d-flex">
                 <button type="submit"
-                  class="btn btn-primary rounded-pill col-12 col-sm-6 mx-0 my-2 form-control-lg"
+                  class="btn btn-primary rounded-pill col-7 col-sm-5 mx-auto mr-sm-auto my-2 form-control-lg"
                   id="search-btn">
                   Search
                 </button>
                 <button type="button"
-                  class="btn btn-secondary rounded-pill col-12 col-sm-6 mx-0 my-2 form-control-lg"
+                  class="btn btn-secondary rounded-pill col-7 col-sm-5 mx-auto ml-sm-auto my-2 form-control-lg"
                   id="random-btn">
                   Random
                 </button>
@@ -69,9 +65,12 @@
         </div>
       </div>
     </div>
+  </header>
 
+  <!-- MAIN START -->
+  <!-- FIRST SLIDE START -->
+  <main class="container-fluid">
     <!-- fixed images for illustration START-->
-
     <!-- Card group -->
     <div class="card-group" id="cards">
       <!-- Card -->
@@ -220,18 +219,18 @@
                 </div>
                 <!-- save favourites button -->
                 <div class="row">
-                  <div class="col-12 col-md-6 col-lg-12 mx-auto" id="save">
+                  <div class="col-12 col-md-6 col-lg-12 mx-auto text-center" id="save">
                     <button type="button"
-                      class="btn btn-primary rounded-pill col-12 my-2 form-control-lg"
+                      class="btn btn-primary rounded-pill px-3 my-2 form-control-lg"
                       id="save-btn">
                       Save to Favourites
                     </button>
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-12 col-md-6 col-lg-12 mx-auto" id="save">
+                  <div class="col-12 col-md-6 col-lg-12 mx-auto text-center" id="save">
                     <button type="button"
-                      class="btn btn-danger rounded-pill col-12 my-2 form-control-lg"
+                      class="btn btn-danger rounded-pill px-3 my-2 form-control-lg"
                       id="remove-btn">
                       Remove recent city
                     </button>
