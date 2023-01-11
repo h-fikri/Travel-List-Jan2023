@@ -140,16 +140,21 @@ div:has(> #favourites-heading) {
   object-fit: cover;
 }
 
-#favourites-list button.faves {
+#favourites-list button.faves, #cards > * button.buttons, #contact-btn {
+  transition: none;
   background-color: var(--faves-btn-bg);
   border: none;
+  border-color: transparent;
   color: var(--white);
   transition-duration: 0.5s;
   transition-timing-function: ease-out;
 }
 
-#favourites-list button.faves:hover {
+#favourites-list button.faves:hover, #cards > * button.buttons:hover, #contact-btn:hover {
+  transition: none;
   background-color: var(--primary-btn-bg-hover);
+  border: none;
+  border-color: transparent;
   color: var(--white);
   transition-duration: 0.5s;
   transition-timing-function: ease-in;
