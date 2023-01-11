@@ -25,7 +25,7 @@ body {
   background-color: var(--page-bg);
 }
 
-#search {
+#header {
   background-image: url("../../design/jumbotron2.png");
   background-position: center;
   background-size: cover;
