@@ -16,30 +16,29 @@ $(document).ready(function () {
 
 // * EVENT LISTENER FOR USER INPUT IN FORM - anything that happens when SEARCH is clicked should be here
 
-$('#search-btn').on('click', function (event) {
-	event.preventDefault();
-	var cityInput = $('#search-box').val().trim();
-	if (cityInput === "" || cityInput === undefined) {
+$("#search-btn").on("click", function (event) {
+  event.preventDefault();
+  var cityInput = $("#search-box").val().trim();
+  if (cityInput === "" || cityInput === undefined) {
     $("#search-modal").modal("show");
     return;
   }
 
-	results = true;
-	scrollTo(results);
-	currentCity = cityInput;
-	createMap(cityInput);
-	getUnsplashImages(cityInput);
-	getCitiesFromLocalStorage();
-	displayCurrentCityName(cityInput);
-	$('#search-box').val(''); // empty input display
-
+  results = true;
+  scrollTo(results);
+  currentCity = cityInput;
+  createMap(cityInput);
+  getUnsplashImages(cityInput);
+  getCitiesFromLocalStorage();
+  displayCurrentCityName(cityInput);
+  $("#search-box").val(""); // empty input display
 });
 
 // EVENT LISTENER FOR RANDOM CITY BUTTON - anything that happens when RANDOM pressed should be in here
 
 $("#random-btn").on("click", function () {
   results = true;
-	scrollTo(results);
+  scrollTo(results);
   var randomCity = getRandomCity();
   currentCity = randomCity;
   createMap(randomCity);
@@ -63,13 +62,6 @@ $("#remove-btn").on("click", function () {
   renderFavoritesButtons();
 });
 
-// EVENT LISTENER FOR REMOVE BUTTON - anything that happens when REMOVE RECENT CITY is clicked should be in here
-
-$("#remove-btn").on("click", function () {
-  removeCityFromCities();
-  renderFavoritesButtons();
-});
-
 //  EVENT LISTENER FOR CITY BUTTONS IN FAVORITES
 
 $(document).on("click", ".faves", function () {
@@ -78,7 +70,6 @@ $(document).on("click", ".faves", function () {
   getUnsplashImages(currentCity);
   displayCurrentCityName(currentCity);
   createMap(currentCity);
-
 });
 
 // HELPER FUNCTIONS
@@ -90,12 +81,12 @@ function displayCurrentCityName(cityName) {
 }
 
 function scrollTo(results) {
-	if (results !== false) {
-		$('html, body').animate(
-			{
-				scrollTop: $('#results').first().offset().top,
-			},
-			2000
-		);
-	}
+  if (results !== false) {
+    $("html, body").animate(
+      {
+        scrollTop: $("#results").first().offset().top,
+      },
+      2000
+    );
+  }
 }

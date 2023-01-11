@@ -35,7 +35,7 @@ function getCitiesFromLocalStorage() {
   if (storedCities !== null) {
     cities = storedCities;
   }
-  console.log(`LocalStorage Cities: ${cities}`);
+  // console.log(`LocalStorage Cities: ${cities}`);
   renderFavoritesButtons();
 }
 
