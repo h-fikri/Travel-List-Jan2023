@@ -3,7 +3,7 @@
 var currentCity = "London"; // local state of current city for easier use in all event listeners - London as default
 
 // Logical variable for results
-let results = false;
+let results = true;
 
 // EVENT LISTENER FOR PAGE LOAD - anything happening on PAGE LOAD should be in here
 
@@ -19,18 +19,25 @@ $(document).ready(function () {
 $("#search-btn").on("click", function (event) {
   event.preventDefault();
   var cityInput = $("#search-box").val().trim();
-  if (cityInput === "" || cityInput === undefined) {
+  if (
+    cityInput === "" ||
+    cityInput === undefined ||
+    cityInput.search(/[A-Za-z]/) === -1
+  ) {
     $("#search-modal").modal("show");
+    results = false;
     return;
   }
 
-  results = true;
+  createMap(cityInput); // if this returns results = false the scrollTo (below) will not run
   scrollTo(results);
-  currentCity = cityInput;
-  createMap(cityInput);
-  getUnsplashImages(cityInput);
   getCitiesFromLocalStorage();
-  displayCurrentCityName(cityInput);
+  if (results !== false) {
+    //the new input is displayed in header and images pulled from unsplash, ONLY if result = true
+    currentCity = cityInput;
+    getUnsplashImages(cityInput);
+    displayCurrentCityName(cityInput);
+  }
   $("#search-box").val(""); // empty input display
 });
 
@@ -72,6 +79,12 @@ $(document).on("click", ".faves", function () {
   createMap(currentCity);
 });
 
+// EVENT LISTENER FOR MODAL CLOSE BUTTON
+$("#modal-close").on("click", function () {
+  $("#search-box").val(""); // empty input display
+  location.reload();
+});
+
 // HELPER FUNCTIONS
 
 // function displaying city in #current-city element
@@ -89,4 +102,5 @@ function scrollTo(results) {
       2000
     );
   }
+  return;
 }
