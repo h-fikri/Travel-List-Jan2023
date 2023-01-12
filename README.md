@@ -6,6 +6,7 @@ Travel List Website Project - January 2023
 - Repository: https://github.com/h-fikri/Travel-List-Jan2023
 - Demonstation: https://h-fikri.github.io/Travel-List-Jan2023/
 - Presentation: https://www.canva.com/design/DAFXdIVEUWQ/uQTFhq-VWhnVKnZ1qKa1xg/view
+- Basic Slide: https://docs.google.com/presentation/d/1N3cN_leY81gJpt2wnysybXJY13a3zgM2SfJNLulTW8U/edit?usp=sharing
 
 ## Overview
 
