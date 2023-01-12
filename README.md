@@ -1,6 +1,11 @@
 # Travel-List-Jan2023
 
-Awesome Travel List Website Project - January 2023
+Travel List Website Project - January 2023
+
+## Links
+- Repository: https://github.com/h-fikri/Travel-List-Jan2023
+- Demonstation: https://h-fikri.github.io/Travel-List-Jan2023/
+- Presentation: https://www.canva.com/design/DAFXdIVEUWQ/uQTFhq-VWhnVKnZ1qKa1xg/view
 
 ## Overview
 
