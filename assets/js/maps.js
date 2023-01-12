@@ -66,6 +66,7 @@ function createMap(city) {
   }).then(() => {
     const location = new google.maps.LatLng(coordinates);
 
+
     let mapProperties = {
       center: location,
       zoom: 4,
@@ -73,6 +74,7 @@ function createMap(city) {
       disableDefaultUI: true,
       scrollwheel: false,
     };
+
 
     // Creates the map with the properties passed
     let map = new google.maps.Map(
